@@ -10,9 +10,11 @@ function setClock(){
     setRotation(hourHand,hour);
     setRotation(minuteHand,minute);
     setRotation(secondHand,second);
+    document.title = `${currentDate.getHours()} : ${currentDate.getMinutes() < 10 ? '0' + currentDate.getMinutes() : currentDate.getMinutes()}`;
 }
 
 function setRotation(element, rotationRatio){
     element.style.setProperty('--rotation',rotationRatio * 360);
 }
+
 setClock();
